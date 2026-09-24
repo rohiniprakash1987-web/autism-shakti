@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Autism Shakti — Strength, Support & Care for Every Child</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sage:    #4A7C6F;
+    --sage-lt: #EAF2EF;
+    --sage-md: #C4DDD7;
+    --teal:    #2C6E7F;
+    --teal-lt: #E3F1F5;
+    --amber:   #E89B4A;
+    --amber-lt:#FDF3E3;
+    --cream:   #FAF8F4;
+    --ink:     #1A1F2E;
+    --ink-60:  #6B7280;
+    --ink-30:  #D1D5DB;
+    --white:   #FFFFFF;
+    --radius:  14px;
+    --radius-lg:24px;
+    --shadow:  0 2px 16px rgba(26,31,46,0.08);
+    --shadow-lg:0 8px 40px rgba(26,31,46,0.12);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.65;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  /* ─── TYPOGRAPHY ─── */
+  .display {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+  .heading-2 {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+  .heading-3 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+  .body-lg { font-size: 1.05rem; color: var(--ink-60); line-height: 1.7; }
+  .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sage);
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(250,248,244,0.9);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--ink-30);
+    padding: 0 6vw;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 68px;
+  }
+  .nav-logo {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--sage);
+    text-decoration: none;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .nav-logo span { color: var(--ink); }
+  .logo-dot {
+    width: 10px; height: 10px;
+    background: var(--amber);
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--ink-60);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--sage); }
+  .nav-cta {
+    background: var(--sage);
+    color: var(--white) !important;
+    padding: 9px 22px;
+    border-radius: 50px;
+    font-size: 0.88rem !important;
+    font-weight: 600 !important;
+    transition: background 0.2s, transform 0.15s !important;
+  }
+  .nav-cta:hover { background: var(--teal) !important; transform: translateY(-1px); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    padding: 120px 6vw 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -120px; right: -200px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, var(--sage-md) 0%, transparent 70%);
+    opacity: 0.4;
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--sage-lt);
+    border: 1px solid var(--sage-md);
+    border-radius: 50px;
+    padding: 6px 14px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--sage);
+    margin-bottom: 24px;
+  }
+  .hero-badge svg { width: 14px; height: 14px; }
+  .hero h1 { margin-bottom: 20px; }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--sage);
+  }
+  .hero-sub { margin-bottom: 36px; max-width: 520px; }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--sage);
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+    padding: 14px 30px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-primary:hover { background: var(--teal); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(74,124,111,0.35); }
+  .btn-outline {
+    background: transparent;
+    color: var(--ink);
+    border: 1.5px solid var(--ink-30);
+    border-radius: 50px;
+    padding: 14px 28px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-outline:hover { border-color: var(--sage); background: var(--sage-lt); }
+  .hero-stats {
+    display: flex; gap: 36px;
+    margin-top: 48px;
+    padding-top: 36px;
+    border-top: 1px solid var(--ink-30);
+  }
+  .hero-stat-num {
+    font-family: 'Sora', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--sage);
+  }
+  .hero-stat-label { font-size: 0.82rem; color: var(--ink-60); margin-top: 2px; }
+
+  /* Hero phone mockup */
+  .hero-visual {
+    position: relative;
+    display: flex; justify-content: center; align-items: center;
+  }
+  .phone-frame {
+    width: 280px;
+    background: var(--ink);
+    border-radius: 38px;
+    padding: 14px;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    z-index: 2;
+  }
+  .phone-screen {
+    background: var(--white);
+    border-radius: 27px;
+    overflow: hidden;
+    height: 540px;
+    display: flex; flex-direction: column;
+  }
+  .phone-status {
+    background: var(--sage);
+    padding: 12px 16px 8px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .phone-status span { font-size: 10px; font-weight: 600; color: var(--white); }
+  .app-header {
+    background: var(--sage);
+    padding: 8px 16px 18px;
+    color: var(--white);
+  }
+  .app-header p { font-size: 10px; opacity: 0.8; }
+  .app-header h4 { font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 700; }
+  .app-search {
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 7px 10px;
+    font-size: 9px;
+    color: rgba(255,255,255,0.7);
+    display: flex; align-items: center; gap: 6px;
+  }
+  .app-body { padding: 12px; flex: 1; overflow: hidden; }
+  .app-section-title { font-size: 9px; font-weight: 700; font-family: 'Sora', sans-serif; color: var(--ink); margin-bottom: 8px; }
+  .app-chips { display: flex; gap: 6px; margin-bottom: 14px; flex-wrap: wrap; }
+  .app-chip {
+    font-size: 8px; font-weight: 600;
+    padding: 4px 10px; border-radius: 50px;
+    background: var(--sage-lt); color: var(--sage);
+    border: 1px solid var(--sage-md);
+  }
+  .app-chip.active { background: var(--sage); color: var(--white); }
+  .therapist-card {
+    background: var(--cream);
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 8px;
+    display: flex; gap: 8px; align-items: flex-start;
+  }
+  .therapist-avatar {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Sora', sans-serif;
+  }
+  .t-info { flex: 1; }
+  .t-name { font-size: 9px; font-weight: 700; color: var(--ink); }
+  .t-spec { font-size: 8px; color: var(--ink-60); margin-top: 1px; }
+  .t-meta { display: flex; justify-content: space-between; align-items: center; margin-top: 6px; }
+  .t-rating { font-size: 8px; color: var(--amber); font-weight: 700; }
+  .t-btn {
+    font-size: 7px; font-weight: 700;
+    background: var(--sage); color: var(--white);
+    border: none; border-radius: 6px; padding: 3px 8px; cursor: pointer;
+  }
+  .chat-bubble {
+    border-radius: 12px;
+    padding: 8px 10px;
+    margin-bottom: 6px;
+    font-size: 8px;
+    line-height: 1.5;
+    max-width: 85%;
+  }
+  .chat-bot { background: var(--sage-lt); color: var(--ink); border-bottom-left-radius: 3px; }
+  .chat-user { background: var(--sage); color: var(--white); border-bottom-right-radius: 3px; margin-left: auto; }
+  .phone-float-1 {
+    position: absolute;
+    top: -20px; right: -40px;
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    box-shadow: var(--shadow);
+    z-index: 3;
+    min-width: 160px;
+  }
+  .phone-float-2 {
+    position: absolute;
+    bottom: 40px; left: -50px;
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    box-shadow: var(--shadow);
+    z-index: 3;
+    min-width: 150px;
+  }
+  .float-label { font-size: 0.72rem; color: var(--ink-60); margin-bottom: 2px; }
+  .float-val { font-family: 'Sora', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--sage); }
+  .float-sub { font-size: 0.7rem; color: var(--ink-60); }
+  .float-icon {
+    width: 32px; height: 32px;
+    background: var(--amber-lt);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 8px;
+  }
+
+  /* ─── SECTIONS ─── */
+  section { padding: 100px 6vw; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-header { text-align: center; margin-bottom: 60px; }
+  .section-header .eyebrow { margin-bottom: 10px; }
+  .section-header .heading-2 { margin-bottom: 16px; }
+
+  /* ─── HOW IT WORKS ─── */
+  #how { background: var(--white); }
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    position: relative;
+  }
+  .steps-grid::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: var(--sage-md);
+    z-index: 0;
+  }
+  .step-item {
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+  }
+  .step-num {
+    width: 80px; height: 80px;
+    background: var(--cream);
+    border: 2px solid var(--sage-md);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+    font-family: 'Sora', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--sage);
+    position: relative;
+    background: var(--white);
+  }
+  .step-num.active-step {
+    background: var(--sage);
+    color: var(--white);
+    border-color: var(--sage);
+  }
+  .step-item h4 { font-family: 'Sora', sans-serif; font-size: 1rem; font-weight: 600; margin-bottom: 8px; color: var(--ink); }
+  .step-item p { font-size: 0.85rem; color: var(--ink-60); line-height: 1.6; }
+
+  /* ─── SERVICES ─── */
+  #services { background: var(--cream); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .service-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 32px 28px;
+    border: 1.5px solid var(--ink-30);
+    transition: border-color 0.25s, transform 0.2s, box-shadow 0.25s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card:hover {
+    border-color: var(--sage);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+  .service-card.featured {
+    background: var(--sage);
+    border-color: var(--sage);
+    color: var(--white);
+  }
+  .service-icon {
+    width: 56px; height: 56px;
+    border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+  }
+  .service-card:not(.featured) .service-icon { background: var(--sage-lt); }
+  .service-card.featured .service-icon { background: rgba(255,255,255,0.2); }
+  .service-card h3 { font-family: 'Sora', sans-serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 10px; }
+  .service-card p { font-size: 0.875rem; line-height: 1.65; }
+  .service-card:not(.featured) p { color: var(--ink-60); }
+  .service-card.featured p { color: rgba(255,255,255,0.85); }
+  .service-tag {
+    display: inline-block;
+    margin-top: 18px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 5px 14px;
+    border-radius: 50px;
+  }
+  .service-card:not(.featured) .service-tag {
+    background: var(--sage-lt);
+    color: var(--sage);
+  }
+  .service-card.featured .service-tag {
+    background: rgba(255,255,255,0.2);
+    color: var(--white);
+  }
+
+  /* ─── BOOKING SECTION ─── */
+  #book { background: var(--white); }
+  .booking-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .booking-ui {
+    background: var(--cream);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    border: 1.5px solid var(--ink-30);
+  }
+  .booking-tabs { display: flex; gap: 4px; margin-bottom: 24px; background: var(--white); border-radius: 50px; padding: 4px; border: 1px solid var(--ink-30); }
+  .booking-tab {
+    flex: 1; text-align: center;
+    padding: 9px 16px;
+    border-radius: 50px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--ink-60);
+    cursor: pointer;
+    border: none; background: transparent;
+    font-family: 'Inter', sans-serif;
+    transition: background 0.2s, color 0.2s;
+  }
+  .booking-tab.active { background: var(--sage); color: var(--white); }
+  .therapist-list { display: flex; flex-direction: column; gap: 12px; }
+  .therapist-row {
+    display: flex; gap: 14px; align-items: center;
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    border: 1px solid var(--ink-30);
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .therapist-row:hover { border-color: var(--sage); box-shadow: 0 2px 12px rgba(74,124,111,0.12); }
+  .therapist-row.selected { border-color: var(--sage); background: var(--sage-lt); }
+  .avatar-lg {
+    width: 48px; height: 48px;
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+  .tr-info { flex: 1; }
+  .tr-name { font-weight: 600; font-size: 0.9rem; color: var(--ink); }
+  .tr-spec { font-size: 0.78rem; color: var(--ink-60); margin-top: 2px; }
+  .tr-meta { display: flex; gap: 10px; margin-top: 6px; align-items: center; }
+  .tr-badge {
+    font-size: 0.7rem; font-weight: 600;
+    padding: 3px 10px; border-radius: 50px;
+    background: var(--teal-lt); color: var(--teal);
+  }
+  .tr-rating-row { font-size: 0.75rem; color: var(--ink-60); }
+  .tr-rating-row b { color: var(--amber); }
+  .slots-row {
+    display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap;
+  }
+  .slot-btn {
+    font-size: 0.78rem; font-weight: 600;
+    padding: 7px 16px; border-radius: 50px;
+    border: 1.5px solid var(--ink-30);
+    background: var(--white);
+    color: var(--ink);
+    cursor: pointer;
+    transition: all 0.18s;
+    font-family: 'Inter', sans-serif;
+  }
+  .slot-btn:hover, .slot-btn.selected { background: var(--sage); color: var(--white); border-color: var(--sage); }
+  .slot-btn.unavailable { opacity: 0.4; pointer-events: none; }
+  .confirm-btn {
+    width: 100%; margin-top: 20px;
+    background: var(--sage);
+    color: var(--white);
+    border: none; border-radius: 50px;
+    padding: 14px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: background 0.2s;
+  }
+  .confirm-btn:hover { background: var(--teal); }
+
+  /* ─── CHATBOT SECTION ─── */
+  #chatbot { background: var(--sage); color: var(--white); }
+  #chatbot .eyebrow { color: var(--sage-md); }
+  #chatbot .heading-2 { color: var(--white); }
+  #chatbot .body-lg { color: rgba(255,255,255,0.8); }
+  .chatbot-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .chat-window {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+  }
+  .chat-topbar {
+    background: var(--cream);
+    padding: 16px 20px;
+    display: flex; align-items: center; gap: 12px;
+    border-bottom: 1px solid var(--ink-30);
+  }
+  .bot-avatar {
+    width: 40px; height: 40px;
+    background: var(--sage);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+  }
+  .bot-name { font-weight: 600; font-size: 0.9rem; color: var(--ink); }
+  .bot-status { font-size: 0.75rem; color: var(--sage); display: flex; align-items: center; gap: 4px; }
+  .status-dot { width: 7px; height: 7px; background: #22c55e; border-radius: 50%; }
+  .chat-body { padding: 20px; display: flex; flex-direction: column; gap: 12px; min-height: 320px; background: var(--white); }
+  .msg { max-width: 80%; }
+  .msg.bot { align-self: flex-start; }
+  .msg.user { align-self: flex-end; }
+  .msg-bubble {
+    padding: 12px 16px;
+    border-radius: 16px;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+  .msg.bot .msg-bubble {
+    background: var(--sage-lt);
+    color: var(--ink);
+    border-bottom-left-radius: 4px;
+  }
+  .msg.user .msg-bubble {
+    background: var(--sage);
+    color: var(--white);
+    border-bottom-right-radius: 4px;
+  }
+  .msg-time { font-size: 0.68rem; color: var(--ink-60); margin-top: 4px; padding: 0 4px; }
+  .msg.user .msg-time { text-align: right; }
+  .quick-replies { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+  .quick-reply {
+    font-size: 0.78rem;
+    padding: 6px 14px; border-radius: 50px;
+    background: var(--white);
+    border: 1.5px solid var(--sage-md);
+    color: var(--sage);
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.18s;
+  }
+  .quick-reply:hover { background: var(--sage); color: var(--white); border-color: var(--sage); }
+  .chat-input-row {
+    padding: 14px 20px;
+    border-top: 1px solid var(--ink-30);
+    display: flex; gap: 10px; align-items: center;
+    background: var(--cream);
+  }
+  .chat-input {
+    flex: 1;
+    border: 1px solid var(--ink-30);
+    border-radius: 50px;
+    padding: 10px 18px;
+    font-size: 0.875rem;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    background: var(--white);
+    color: var(--ink);
+    transition: border-color 0.2s;
+  }
+  .chat-input:focus { border-color: var(--sage); }
+  .chat-send {
+    width: 40px; height: 40px;
+    background: var(--sage);
+    border: none; border-radius: 50%;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.2s;
+  }
+  .chat-send:hover { background: var(--teal); }
+  .chatbot-features { display: flex; flex-direction: column; gap: 20px; }
+  .chatbot-feat {
+    display: flex; gap: 16px; align-items: flex-start;
+  }
+  .chatbot-feat-icon {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.15);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+  .chatbot-feat h4 { font-family: 'Sora', sans-serif; font-size: 1rem; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+  .chatbot-feat p { font-size: 0.85rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
+
+  /* ─── THERAPIST TRAINING ─── */
+  #training { background: var(--cream); }
+  .training-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+  .training-modules { display: flex; flex-direction: column; gap: 14px; }
+  .module-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+    border: 1px solid var(--ink-30);
+    display: flex; gap: 16px; align-items: flex-start;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .module-card:hover { border-color: var(--sage); box-shadow: 0 2px 14px rgba(74,124,111,0.1); }
+  .module-card.active-module { border-color: var(--sage); background: var(--sage-lt); }
+  .module-icon {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    background: var(--sage-lt);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+  .module-card.active-module .module-icon { background: var(--sage); }
+  .module-info { flex: 1; }
+  .module-title { font-weight: 600; font-size: 0.92rem; color: var(--ink); margin-bottom: 4px; }
+  .module-sub { font-size: 0.8rem; color: var(--ink-60); }
+  .module-progress {
+    height: 4px;
+    background: var(--ink-30);
+    border-radius: 50px;
+    margin-top: 10px;
+    overflow: hidden;
+  }
+  .module-progress-fill {
+    height: 100%;
+    background: var(--sage);
+    border-radius: 50px;
+  }
+  .module-badge {
+    font-size: 0.7rem; font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 50px;
+    white-space: nowrap;
+    align-self: flex-start;
+  }
+  .badge-done { background: var(--sage-lt); color: var(--sage); }
+  .badge-progress { background: var(--amber-lt); color: var(--amber); }
+  .badge-new { background: var(--teal-lt); color: var(--teal); }
+  .training-right { position: sticky; top: 90px; }
+  .training-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--ink-30);
+    box-shadow: var(--shadow);
+  }
+  .training-card-header {
+    background: var(--sage);
+    padding: 28px;
+    color: var(--white);
+  }
+  .training-card-header h3 { font-family: 'Sora', sans-serif; font-size: 1.2rem; font-weight: 600; margin-bottom: 6px; }
+  .training-card-header p { font-size: 0.85rem; opacity: 0.85; }
+  .training-card-body { padding: 24px; }
+  .cert-item { display: flex; gap: 12px; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--ink-30); }
+  .cert-item:last-child { border-bottom: none; }
+  .cert-icon { font-size: 1.3rem; width: 36px; text-align: center; }
+  .cert-info { flex: 1; }
+  .cert-name { font-weight: 600; font-size: 0.88rem; color: var(--ink); }
+  .cert-sub { font-size: 0.78rem; color: var(--ink-60); }
+  .cert-check { color: var(--sage); font-size: 1.1rem; }
+
+  /* ─── TESTIMONIALS ─── */
+  #testimonials { background: var(--white); }
+  .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .testi-card {
+    background: var(--cream);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    border: 1px solid var(--ink-30);
+    position: relative;
+  }
+  .testi-quote { font-size: 2.5rem; color: var(--sage-md); line-height: 1; margin-bottom: 12px; font-family: Georgia, serif; }
+  .testi-text { font-size: 0.88rem; color: var(--ink-60); line-height: 1.7; margin-bottom: 20px; }
+  .testi-author { display: flex; gap: 12px; align-items: center; }
+  .testi-avatar {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-family: 'Sora', sans-serif;
+    font-size: 0.9rem;
+    background: var(--sage-lt);
+    color: var(--sage);
+    flex-shrink: 0;
+  }
+  .testi-name { font-weight: 600; font-size: 0.88rem; color: var(--ink); }
+  .testi-role { font-size: 0.76rem; color: var(--ink-60); }
+  .testi-stars { color: var(--amber); font-size: 0.85rem; margin-bottom: 12px; letter-spacing: 2px; }
+
+  /* ─── CTA BANNER ─── */
+  #cta {
+    background: var(--ink);
+    padding: 80px 6vw;
+    text-align: center;
+  }
+  #cta .heading-2 { color: var(--white); margin-bottom: 16px; }
+  #cta .body-lg { color: rgba(255,255,255,0.65); max-width: 560px; margin: 0 auto 36px; }
+  .cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn-white {
+    background: var(--white);
+    color: var(--ink);
+    border: none;
+    border-radius: 50px;
+    padding: 14px 30px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-white:hover { opacity: 0.9; }
+  .btn-outline-white {
+    background: transparent;
+    color: var(--white);
+    border: 1.5px solid rgba(255,255,255,0.35);
+    border-radius: 50px;
+    padding: 14px 28px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+    text-decoration: none;
+  }
+  .btn-outline-white:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--ink);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 60px 6vw 40px;
+    color: rgba(255,255,255,0.65);
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+  .footer-brand { color: var(--white); }
+  .footer-logo {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--sage);
+    margin-bottom: 12px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .footer-brand p { font-size: 0.85rem; line-height: 1.7; color: rgba(255,255,255,0.55); }
+  .footer-col h5 {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--sage-md); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 24px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-bottom p { font-size: 0.8rem; }
+
+  /* ─── FLOATING CHATBOT BUTTON ─── */
+  .chat-fab {
+    position: fixed;
+    bottom: 30px; right: 30px;
+    width: 60px; height: 60px;
+    background: var(--sage);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 24px rgba(74,124,111,0.45);
+    cursor: pointer;
+    z-index: 200;
+    border: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-size: 1.4rem;
+  }
+  .chat-fab:hover { transform: scale(1.08); box-shadow: 0 8px 32px rgba(74,124,111,0.55); }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-10px); }
+  }
+  .hero-visual .phone-frame { animation: float 5s ease-in-out infinite; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-left > * {
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-left > *:nth-child(2) { animation-delay: 0.2s; }
+  .hero-left > *:nth-child(3) { animation-delay: 0.3s; }
+  .hero-left > *:nth-child(4) { animation-delay: 0.4s; }
+  .hero-left > *:nth-child(5) { animation-delay: 0.5s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; padding: 100px 5vw 60px; text-align: center; }
+    .hero-visual { display: none; }
+    .hero-actions { justify-content: center; }
+    .hero-stats { justify-content: center; }
+    .steps-grid { grid-template-columns: 1fr 1fr; }
+    .steps-grid::before { display: none; }
+    .services-grid { grid-template-columns: 1fr; }
+    .booking-layout, .chatbot-layout, .training-layout { grid-template-columns: 1fr; }
+    .testi-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── NAVBAR ─── -->
+<nav>
+  <a href="#" class="nav-logo">
+    <span class="logo-dot"></span>
+    Neuro<span>Nest</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#how">How it works</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#book">Book a therapist</a></li>
+    <li><a href="#chatbot">AI guide</a></li>
+    <li><a href="#training">For therapists</a></li>
+    <li><a href="#finder">Find Centers</a></li>
+    <li><a href="#book" class="nav-cta">Book now</a></li>
+  </ul>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+      India's first AI-powered home therapy platform
+    </div>
+    <h1 class="display">
+      Expert therapy for your child,<br>
+      <em>at your doorstep.</em>
+    </h1>
+    <p class="body-lg hero-sub">
+      Online consultations, certified home-visit therapists, and an AI guide that helps you understand your child's neurological journey — all in one place.
+    </p>
+    <div class="hero-actions">
+      <a href="#book" class="btn-primary">
+        Book a therapist
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#chatbot" class="btn-outline">
+        Talk to our AI guide
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">1,200+</div>
+        <div class="hero-stat-label">Families supported</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">180+</div>
+        <div class="hero-stat-label">Certified therapists</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">4.9★</div>
+        <div class="hero-stat-label">Average rating</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Phone mockup -->
+  <div class="hero-visual">
+    <div class="phone-float-1">
+      <div class="float-label">Next session</div>
+      <div class="float-val">Today 3:30 PM</div>
+      <div class="float-sub">Speech Therapy · Home visit</div>
+    </div>
+    <div class="phone-frame">
+      <div class="phone-screen">
+        <div class="phone-status">
+          <span>9:41</span>
+          <span>●●●</span>
+        </div>
+        <div class="app-header">
+          <p>Good morning, Priya 👋</p>
+          <h4>Find the right therapist</h4>
+          <div class="app-search">🔍 Search by condition or therapy…</div>
+        </div>
+        <div class="app-body">
+          <p class="app-section-title">Filter by therapy</p>
+          <div class="app-chips">
+            <span class="app-chip active">All</span>
+            <span class="app-chip">Speech</span>
+            <span class="app-chip">OT</span>
+            <span class="app-chip">ABA</span>
+            <span class="app-chip">Physio</span>
+          </div>
+          <p class="app-section-title">Available near you</p>
+          <div class="therapist-card">
+            <div class="therapist-avatar" style="background:#EAF2EF;color:#4A7C6F;">Dr</div>
+            <div class="t-info">
+              <div class="t-name">Dr. Ananya S.</div>
+              <div class="t-spec">Speech & Language Therapy</div>
+              <div class="t-meta">
+                <span class="t-rating">★ 4.9</span>
+                <button class="t-btn">Book now</button>
+              </div>
+            </div>
+          </div>
+          <div class="therapist-card">
+            <div class="therapist-avatar" style="background:#E3F1F5;color:#2C6E7F;">MR</div>
+            <div class="t-info">
+              <div class="t-name">Mr. Rohit M.</div>
+              <div class="t-spec">Occupational Therapy</div>
+              <div class="t-meta">
+                <span class="t-rating">★ 4.8</span>
+                <button class="t-btn">Book now</button>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:10px">
+            <div class="chat-bubble chat-bot">Hi Priya! Is Aryan's therapy going well? I noticed his session is today 🌟</div>
+            <div class="chat-bubble chat-user">He had a small episode this morning</div>
+            <div class="chat-bubble chat-bot">I've noted that. Want me to inform Dr. Ananya before the session?</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="phone-float-2">
+      <div class="float-icon">🧠</div>
+      <div class="float-label">AI insight ready</div>
+      <div class="float-val" style="font-size:0.9rem">Episode pattern detected</div>
+      <div class="float-sub">Tuesdays after school — view report</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── HOW IT WORKS ─── -->
+<section id="how">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="eyebrow">Simple 4-step process</p>
+      <h2 class="heading-2">From concern to care — in 24 hours</h2>
+      <p class="body-lg" style="max-width:560px;margin:0 auto">Whether you're unsure where to start or already have a diagnosis, Autism Shakti guides you to the right support immediately.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-item">
+        <div class="step-num active-step">1</div>
+        <h4>Talk to our AI</h4>
+        <p>Describe your child's situation. The AI guide helps you understand symptoms and points you to the right therapy type — no medical jargon.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <h4>Online consultation</h4>
+        <p>Book a video session with a pediatric specialist who reviews your child's profile and recommends an intervention plan.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <h4>Choose your therapist</h4>
+        <p>Browse certified therapists near you, read reviews, see availability, and pick the right fit for your child's needs and schedule.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">4</div>
+        <h4>Therapy at home</h4>
+        <p>Your therapist arrives at your door. Sessions are logged, progress tracked, and shared with your consultation team after every visit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVICES ─── -->
+<section id="services">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="eyebrow">What we offer</p>
+      <h2 class="heading-2">Everything your child needs, under one platform</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card featured">
+        <div class="service-icon">🤝</div>
+        <h3>Home Therapy Sessions</h3>
+        <p>Certified Speech, Occupational, ABA, and Physiotherapy therapists visit your home at a time that works for your family — no clinic commute, no child exhausted before therapy starts.</p>
+        <span class="service-tag">⭐ Most booked</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎥</div>
+        <h3>Online Consultation</h3>
+        <p>Video sessions with pediatric neurologists, developmental pediatricians, and child psychologists. Get a diagnosis, second opinion, or IEP guidance without leaving home.</p>
+        <span class="service-tag">Available today</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🤖</div>
+        <h3>AI Parent Guide</h3>
+        <p>A 24/7 conversational AI trained on pediatric neurology that answers your questions, explains medical terms in plain language, and helps you log episodes between sessions.</p>
+        <span class="service-tag">Always on</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏫</div>
+        <h3>Shadow Teaching Coordination</h3>
+        <p>We match your child with a trained shadow teacher for mainstream school. The app coordinates daily school reports, communication with your therapist, and the fading protocol.</p>
+        <span class="service-tag">School support</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📊</div>
+        <h3>Progress Tracking & Reports</h3>
+        <p>Every session is logged. Auto-generated monthly reports in doctor-ready PDF format track milestones, medication, and episodes. Share with any specialist in one tap.</p>
+        <span class="service-tag">Data-driven</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">👨‍👩‍👧</div>
+        <h3>Parent Community</h3>
+        <p>Connect with other families managing similar diagnoses — autism, epilepsy, cerebral palsy, ADHD. Moderated peer groups, caregiver support circles, and expert-led webinars.</p>
+        <span class="service-tag">Free to join</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BOOKING ─── -->
+<section id="book">
+  <div class="section-inner">
+    <div class="booking-layout">
+      <div>
+        <div class="booking-ui">
+          <div class="booking-tabs">
+            <button class="booking-tab active" onclick="switchTab(this,'home')">🏠 Home therapy</button>
+            <button class="booking-tab" onclick="switchTab(this,'online')">🎥 Online consult</button>
+          </div>
+          <p style="font-size:0.8rem;font-weight:600;color:var(--ink-60);margin-bottom:12px;text-transform:uppercase;letter-spacing:.06em">Available therapists</p>
+          <div class="therapist-list">
+            <div class="therapist-row selected" onclick="selectTherapist(this)">
+              <div class="avatar-lg" style="background:#EAF2EF;color:#4A7C6F;">AS</div>
+              <div class="tr-info">
+                <div class="tr-name">Dr. Ananya Sharma</div>
+                <div class="tr-spec">Speech & Language Therapist · 8 yrs exp</div>
+                <div class="tr-meta">
+                  <span class="tr-badge">Speech</span>
+                  <span class="tr-rating-row"><b>★ 4.9</b> (142 reviews)</span>
+                </div>
+              </div>
+            </div>
+            <div class="therapist-row" onclick="selectTherapist(this)">
+              <div class="avatar-lg" style="background:#E3F1F5;color:#2C6E7F;">RM</div>
+              <div class="tr-info">
+                <div class="tr-name">Mr. Rohit Menon</div>
+                <div class="tr-spec">Occupational Therapist · 6 yrs exp</div>
+                <div class="tr-meta">
+                  <span class="tr-badge">OT</span>
+                  <span class="tr-rating-row"><b>★ 4.8</b> (98 reviews)</span>
+                </div>
+              </div>
+            </div>
+            <div class="therapist-row" onclick="selectTherapist(this)">
+              <div class="avatar-lg" style="background:#FDF3E3;color:#E8884A;">PK</div>
+              <div class="tr-info">
+                <div class="tr-name">Ms. Preethi Krishnan</div>
+                <div class="tr-spec">ABA Therapist · Autism specialist · 5 yrs</div>
+                <div class="tr-meta">
+                  <span class="tr-badge">ABA</span>
+                  <span class="tr-rating-row"><b>★ 4.9</b> (77 reviews)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p style="font-size:0.8rem;font-weight:600;color:var(--ink-60);margin:20px 0 10px;text-transform:uppercase;letter-spacing:.06em">Pick a time slot — Today</p>
+          <div class="slots-row" id="slotsRow">
+            <button class="slot-btn unavailable">9:00 AM</button>
+            <button class="slot-btn unavailable">10:30 AM</button>
+            <button class="slot-btn selected" onclick="selectSlot(this)">2:00 PM</button>
+            <button class="slot-btn" onclick="selectSlot(this)">3:30 PM</button>
+            <button class="slot-btn" onclick="selectSlot(this)">5:00 PM</button>
+            <button class="slot-btn" onclick="selectSlot(this)">6:30 PM</button>
+          </div>
+          <button class="confirm-btn" onclick="confirmBooking()">Confirm booking →</button>
+        </div>
+      </div>
+      <div>
+        <p class="eyebrow" style="margin-bottom:12px">Book in under 2 minutes</p>
+        <h2 class="heading-2" style="margin-bottom:20px">The right therapist, matched to your child's needs</h2>
+        <p class="body-lg" style="margin-bottom:28px">Every therapist on Autism Shakti is individually verified, background-checked, and holds a recognized clinical certification. You can filter by therapy type, language spoken, gender preference, and availability.</p>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div style="display:flex;gap:12px;align-items:center;">
+            <div style="width:40px;height:40px;background:var(--sage-lt);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;">✅</div>
+            <div>
+              <div style="font-weight:600;font-size:0.9rem;color:var(--ink)">Individually verified & background-checked</div>
+              <div style="font-size:0.8rem;color:var(--ink-60)">RCI / ASHA registered therapists only</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:12px;align-items:center;">
+            <div style="width:40px;height:40px;background:var(--sage-lt);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;">🔄</div>
+            <div>
+              <div style="font-weight:600;font-size:0.9rem;color:var(--ink)">Easy rescheduling & free cancellation</div>
+              <div style="font-size:0.8rem;color:var(--ink-60)">Cancel up to 4 hours before, no charge</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:12px;align-items:center;">
+            <div style="width:40px;height:40px;background:var(--sage-lt);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;">📝</div>
+            <div>
+              <div style="font-weight:600;font-size:0.9rem;color:var(--ink)">Post-session notes shared automatically</div>
+              <div style="font-size:0.8rem;color:var(--ink-60)">Therapist files a report within 30 minutes of every session</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CHATBOT ─── -->
+<section id="chatbot">
+  <div class="section-inner">
+    <div class="chatbot-layout">
+      <div>
+        <div class="chat-window">
+          <div class="chat-topbar">
+            <div class="bot-avatar">🧠</div>
+            <div>
+              <div class="bot-name">Neha — AI Parent Guide</div>
+              <div class="bot-status"><span class="status-dot"></span> Available 24/7</div>
+            </div>
+          </div>
+          <div class="chat-body" id="chatBody">
+            <div class="msg bot">
+              <div class="msg-bubble">Hi! I'm Neha, your AI guide. I can help you understand your child's condition, explain what different therapies do, or just answer questions you're too nervous to ask a doctor. What's on your mind?</div>
+              <div class="msg-time">Just now</div>
+              <div class="quick-replies">
+                <button class="quick-reply" onclick="sendQuickReply(this)">My child had a seizure</button>
+                <button class="quick-reply" onclick="sendQuickReply(this)">What is ABA therapy?</button>
+                <button class="quick-reply" onclick="sendQuickReply(this)">Speech delay signs</button>
+              </div>
+            </div>
+          </div>
+          <div class="chat-input-row">
+            <input type="text" class="chat-input" id="chatInput" placeholder="Type your question…" onkeydown="if(event.key==='Enter')sendMsg()">
+            <button class="chat-send" onclick="sendMsg()" aria-label="Send message">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="eyebrow" style="margin-bottom:14px">AI parent guide</p>
+        <h2 class="heading-2" style="margin-bottom:16px">Answers at 2am, when the doctor's office is closed</h2>
+        <p class="body-lg" style="margin-bottom:36px">Neha is trained on pediatric neurology guidelines and answers questions in plain, reassuring language. She also logs episodes you describe, flags patterns, and preps a summary for your therapist.</p>
+        <div class="chatbot-features">
+          <div class="chatbot-feat">
+            <div class="chatbot-feat-icon">💬</div>
+            <div>
+              <h4>Plain-language answers</h4>
+              <p>Explains medical terms, diagnoses, and therapy approaches without jargon. Available in Hindi, Kannada, Tamil, and English.</p>
+            </div>
+          </div>
+          <div class="chatbot-feat">
+            <div class="chatbot-feat-icon">📋</div>
+            <div>
+              <h4>Episode logging via chat</h4>
+              <p>Describe what happened and Neha logs it with timestamp, duration, and possible triggers. Your therapist sees it before the next session.</p>
+            </div>
+          </div>
+          <div class="chatbot-feat">
+            <div class="chatbot-feat-icon">🎓</div>
+            <div>
+              <h4>Therapist training mode</h4>
+              <p>Therapists use Neha for clinical case study review, session planning, and continuing education modules — keeping their skills current.</p>
+            </div>
+          </div>
+          <div class="chatbot-feat">
+            <div class="chatbot-feat-icon">🚨</div>
+            <div>
+              <h4>Emergency triage</h4>
+              <p>If a description sounds urgent, Neha immediately surfaces the emergency protocol and offers to alert the on-call consultant.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── THERAPIST TRAINING ─── -->
+<section id="training">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="eyebrow">For therapists</p>
+      <h2 class="heading-2">Grow your practice. Sharpen your skills.</h2>
+      <p class="body-lg" style="max-width:540px;margin:0 auto">Autism Shakti is not just for parents. We onboard, verify, and continuously train therapists through structured modules, clinical case simulations, and peer learning.</p>
+    </div>
+    <div class="training-layout">
+      <div>
+        <p style="font-size:0.82rem;font-weight:600;color:var(--ink-60);text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px">Training modules</p>
+        <div class="training-modules">
+          <div class="module-card active-module">
+            <div class="module-icon">🧠</div>
+            <div class="module-info">
+              <div class="module-title">Pediatric Neurology Fundamentals</div>
+              <div class="module-sub">Epilepsy, CP, ASD, ADHD — core clinical knowledge</div>
+              <div class="module-progress"><div class="module-progress-fill" style="width:100%"></div></div>
+            </div>
+            <span class="module-badge badge-done">Complete</span>
+          </div>
+          <div class="module-card">
+            <div class="module-icon">💬</div>
+            <div class="module-info">
+              <div class="module-title">Parent Communication Skills</div>
+              <div class="module-sub">Delivering difficult news, building trust, cultural sensitivity</div>
+              <div class="module-progress"><div class="module-progress-fill" style="width:72%"></div></div>
+            </div>
+            <span class="module-badge badge-progress">72%</span>
+          </div>
+          <div class="module-card">
+            <div class="module-icon">🏠</div>
+            <div class="module-info">
+              <div class="module-title">Home Visit Safety & Protocol</div>
+              <div class="module-sub">Environment assessment, equipment, child safeguarding</div>
+              <div class="module-progress"><div class="module-progress-fill" style="width:55%"></div></div>
+            </div>
+            <span class="module-badge badge-progress">55%</span>
+          </div>
+          <div class="module-card">
+            <div class="module-icon">📊</div>
+            <div class="module-info">
+              <div class="module-title">Session Documentation & IEP Writing</div>
+              <div class="module-sub">SOAP notes, goal-setting, progress report standards</div>
+              <div class="module-progress"><div class="module-progress-fill" style="width:0%"></div></div>
+            </div>
+            <span class="module-badge badge-new">Not started</span>
+          </div>
+          <div class="module-card">
+            <div class="module-icon">🤖</div>
+            <div class="module-info">
+              <div class="module-title">Using the Autism Shakti AI Tool</div>
+              <div class="module-sub">How to use Neha for session prep and clinical research</div>
+              <div class="module-progress"><div class="module-progress-fill" style="width:0%"></div></div>
+            </div>
+            <span class="module-badge badge-new">Not started</span>
+          </div>
+        </div>
+      </div>
+      <div class="training-right">
+        <div class="training-card">
+          <div class="training-card-header">
+            <h3>Therapist Certification Track</h3>
+            <p>Complete all modules and a supervised case review to become a Autism Shakti Certified Home Therapist — our highest trust tier, visible to parents on your profile.</p>
+          </div>
+          <div class="training-card-body">
+            <div class="cert-item">
+              <div class="cert-icon">📋</div>
+              <div class="cert-info">
+                <div class="cert-name">RCI / ASHA Credential verification</div>
+                <div class="cert-sub">Mandatory — submitted at onboarding</div>
+              </div>
+              <div class="cert-check">✓</div>
+            </div>
+            <div class="cert-item">
+              <div class="cert-icon">🔍</div>
+              <div class="cert-info">
+                <div class="cert-name">Background & reference check</div>
+                <div class="cert-sub">Criminal, identity, and 2 professional refs</div>
+              </div>
+              <div class="cert-check">✓</div>
+            </div>
+            <div class="cert-item">
+              <div class="cert-icon">🎓</div>
+              <div class="cert-info">
+                <div class="cert-name">5 training modules + assessment</div>
+                <div class="cert-sub">Score ≥ 80% on each to pass</div>
+              </div>
+              <div class="cert-check" style="color:var(--amber)">⏳</div>
+            </div>
+            <div class="cert-item">
+              <div class="cert-icon">👁️</div>
+              <div class="cert-info">
+                <div class="cert-name">Supervised observation session</div>
+                <div class="cert-sub">1 observed home visit by a senior therapist</div>
+              </div>
+              <div class="cert-check" style="color:var(--ink-30)">○</div>
+            </div>
+            <div style="margin-top:20px">
+              <button class="confirm-btn" style="width:100%">Continue training →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FINDER SECTION ─── -->
+<section id="finder" style="background:#F4F7FA;padding:96px 0;">
+<style>
+  .finder-wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  .finder-header { text-align: center; margin-bottom: 52px; }
+  .finder-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #4A7C6F; display: block; margin-bottom: 12px; }
+  .finder-h2 { font-family: 'Sora', sans-serif; font-size: clamp(1.9rem, 3.5vw, 2.7rem); font-weight: 700; color: #1A1F2E; line-height: 1.15; margin-bottom: 14px; }
+  .finder-sub { font-size: 1rem; color: #6B7280; max-width: 560px; margin: 0 auto; line-height: 1.7; }
+
+  /* Search bar */
+  .finder-search { display: flex; gap: 10px; max-width: 560px; margin: 0 auto 48px; }
+  .finder-input { flex: 1; padding: 13px 18px; border-radius: 50px; border: 1.5px solid #D1D9E0; font-size: 0.92rem; font-family: 'Sora', sans-serif; background: #fff; color: #1A1F2E; outline: none; transition: .2s; }
+  .finder-input:focus { border-color: #4A7C6F; box-shadow: 0 0 0 3px rgba(74,124,111,0.12); }
+  .finder-input::placeholder { color: #9CA3AF; }
+  .finder-search-btn { padding: 13px 24px; background: #4A7C6F; color: #fff; border: none; border-radius: 50px; font-size: 0.88rem; font-weight: 600; font-family: 'Sora', sans-serif; cursor: pointer; white-space: nowrap; transition: .2s; }
+  .finder-search-btn:hover { background: #2C6E7F; }
+
+  /* Tabs */
+  .finder-tabs { display: flex; gap: 8px; justify-content: center; margin-bottom: 36px; }
+  .ftab { padding: 9px 22px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; border: 1.5px solid #D1D9E0; background: #fff; color: #6B7280; cursor: pointer; transition: .2s; font-family: 'Sora', sans-serif; }
+  .ftab.active, .ftab:hover { border-color: #4A7C6F; background: #4A7C6F; color: #fff; }
+
+  /* Cards grid */
+  .finder-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 40px; }
+  @media(max-width:860px){ .finder-grid { grid-template-columns: 1fr 1fr; } }
+  @media(max-width:560px){ .finder-grid { grid-template-columns: 1fr; } }
+
+  .fcard { background: #fff; border-radius: 16px; border: 1px solid #E5EBF0; padding: 22px; transition: all .25s; position: relative; overflow: hidden; }
+  .fcard:hover { border-color: #4A7C6F; box-shadow: 0 8px 32px rgba(74,124,111,0.12); transform: translateY(-3px); }
+  .fcard-type { font-size: 0.68rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; display: inline-block; margin-bottom: 12px; }
+  .type-speech { background: #D6F5EF; color: #0D6B5E; }
+  .type-school { background: #EDE8FD; color: #4B2DB5; }
+  .type-center { background: #FEF3DC; color: #854F0B; }
+  .fcard h4 { font-size: 0.97rem; font-weight: 700; color: #1A1F2E; margin-bottom: 5px; }
+  .fcard-addr { font-size: 0.8rem; color: #6B7280; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 5px; line-height: 1.5; }
+  .fcard-meta { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+  .fmeta-pill { font-size: 0.72rem; font-weight: 500; padding: 3px 10px; border-radius: 20px; background: #F4F7FA; color: #4B5563; display: flex; align-items: center; gap: 4px; }
+  .fcard-row { display: flex; align-items: center; justify-content: space-between; margin-top: 4px; }
+  .fcard-dist { font-size: 0.78rem; color: #4A7C6F; font-weight: 600; }
+  .fcard-rating { font-size: 0.8rem; color: #E8900A; font-weight: 600; }
+  .fcard-btn { font-size: 0.78rem; font-weight: 600; color: #4A7C6F; border: 1.5px solid #4A7C6F; border-radius: 50px; padding: 5px 14px; cursor: pointer; background: transparent; font-family: 'Sora', sans-serif; transition: .2s; }
+  .fcard-btn:hover { background: #4A7C6F; color: #fff; }
+  .fcard-verified { position: absolute; top: 14px; right: 14px; font-size: 0.65rem; font-weight: 700; background: #DCFCE7; color: #166534; padding: 2px 8px; border-radius: 20px; }
+
+  /* Map placeholder */
+  .finder-map { background: #E8F0EB; border-radius: 16px; height: 320px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1.5px dashed #A8C5BB; gap: 14px; cursor: pointer; transition: .2s; }
+  .finder-map:hover { background: #D6EBE3; }
+  .finder-map-icon { font-size: 3rem; }
+  .finder-map p { font-size: 0.9rem; color: #4A7C6F; font-weight: 600; }
+  .finder-map span { font-size: 0.8rem; color: #6B7280; }
+  .finder-tip { text-align: center; margin-top: 24px; font-size: 0.83rem; color: #9CA3AF; }
+  .finder-tip a { color: #4A7C6F; font-weight: 600; text-decoration: none; }
+  .finder-tip a:hover { text-decoration: underline; }
+</style>
+
+<div class="finder-wrap">
+  <div class="finder-header">
+    <span class="finder-eyebrow">Find nearby</span>
+    <h2 class="finder-h2">Speech centers &amp; autism-friendly schools near you</h2>
+    <p class="finder-sub">Locate verified speech therapy centers and inclusive schools that are trained to support children with autism — filtered to what's closest to you.</p>
+  </div>
+
+  <!-- Search -->
+  <div class="finder-search">
+    <input class="finder-input" id="finderCity" placeholder="Enter your city — e.g. Patna, Bengaluru, Delhi" onkeydown="if(event.key==='Enter') runSearch()"/>
+    <button class="finder-search-btn" onclick="runSearch()">🔍 Search</button>
+  </div>
+
+  <!-- Tabs -->
+  <div class="finder-tabs">
+    <button class="ftab active" onclick="switchTab(this,'all')">All</button>
+    <button class="ftab" onclick="switchTab(this,'speech')">🗣️ Speech Centers</button>
+    <button class="ftab" onclick="switchTab(this,'school')">🏫 Autism-friendly Schools</button>
+    <button class="ftab" onclick="switchTab(this,'center')">🧠 Dev. Centers</button>
+  </div>
+
+  <!-- Results -->
+  <div class="finder-grid" id="finderGrid">
+    <!-- Speech center 1 -->
+    <div class="fcard" data-type="speech">
+      <span class="fcard-verified">✓ Verified</span>
+      <span class="fcard-type type-speech">🗣️ Speech Center</span>
+      <h4>Pragyan Child Development Centre</h4>
+      <p class="fcard-addr">📍 Indiranagar, Bengaluru — near 100 Feet Road</p>
+      <div class="fcard-meta">
+        <span class="fmeta-pill">⏰ Mon–Sat 9–6</span>
+        <span class="fmeta-pill">👶 Age 1–18</span>
+        <span class="fmeta-pill">🗣️ Hindi · Kannada</span>
+      </div>
+      <div class="fcard-row">
+        <span class="fcard-dist">📌 2.3 km</span>
+        <span class="fcard-rating">★ 4.8</span>
+        <button class="fcard-btn" onclick="showDetail('Pragyan CDC')">Get directions</button>
+      </div>
+    </div>
+
+    <!-- Speech center 2 -->
+    <div class="fcard" data-type="speech">
+      <span class="fcard-verified">✓ Verified</span>
+      <span class="fcard-type type-speech">🗣️ Speech Center</span>
+      <h4>NIMHANS Child &amp; Adolescent Psychiatry</h4>
+      <p class="fcard-addr">📍 Hosur Road, Bengaluru</p>
+      <div class="fcard-meta">
+        <span class="fmeta-pill">⏰ Mon–Fri 9–5</span>
+        <span class="fmeta-pill">👶 Age 0–18</span>
+        <span class="fmeta-pill">🏥 Government</span>
+      </div>
+      <div class="fcard-row">
+        <span class="fcard-dist">📌 5.1 km</span>
+        <span class="fcard-rating">★ 4.6</span>
+        <button class="fcard-btn" onclick="showDetail('NIMHANS')">Get directions</button>
+      </div>
+    </div>
+
+    <!-- Speech center 3 -->
+    <div class="fcard" data-type="speech">
+      <span class="fcard-type type-speech">🗣️ Speech Center</span>
+      <h4>Hear Me Out Speech Clinic</h4>
+      <p class="fcard-addr">📍 Rajendra Nagar, Patna, Bihar</p>
+      <div class="fcard-meta">
+        <span class="fmeta-pill">⏰ Mon–Sat 10–7</span>
+        <span class="fmeta-pill">👶 Age 2–16</span>
+        <span class="fmeta-pill">🗣️ Hindi · Bhojpuri</span>
+      </div>
+      <div class="fcard-row">
+        <span class="fcard-dist">📌 1.8 km</span>
+        <span class="fcard-rating">★ 4.5</span>
+        <button class="fcard-btn" onclick="showDetail('Hear Me Out')">Get directions</button>
+      </div>
+    </div>
+
+    <!-- School 1 -->
+    <div class="fcard" data-type="school">
+      <span class="fcard-verified">✓ Certified Inclusive</span>
+      <span class="fcard-type type-school">🏫 Autism-friendly School</span>
+      <h4>Sparsh School for Special Needs</h4>
+      <p class="fcard-addr">📍 Koramangala, Bengaluru</p>
+      <div class="fcard-meta">
+        <span class="fmeta-pill">🎓 Grades KG–8</span>
+        <span class="fmeta-pill">👥 Small class sizes</span>
+        <span class="fmeta-pill">♿ Fully accessible</span>
+      </div>
+      <div class="fcard-row">
+        <span class="fcard-dist">📌 3.7 km</span>
+        <span class="fcard-rating">★ 4.9</span>
+        <button class="fcard-btn" onclick="showDetail('Sparsh School')">View school</button>
+      </div>
+    </div>
+
+    <!-- School 2 -->
+    <div class="fcard" data-type="school">
+      <span class="fcard-verified">✓ Certified Inclusive</span>
+      <span class="fcard-type type-school">🏫 Autism-friendly School</span>
+      <h4>Action For Autism — Resource Centre</h4>
+      <p class="fcard-addr">📍 Jasola, New Delhi</p>
+      <div class="fcard-meta">
+        <span class="fmeta-pill">🎓 Age 3–21</span>
+        <span class="fmeta-pill">🧩 ABA-trained staff</span>
+        <span class="fmeta-pill">📋 IEP support</span>
+      </div>
+      <div class="fcard-row">
+        <span class="fcard-dist">📌 6.2 km</span>
+        <span class="fcard-rating">★ 4.7</span>
+        <button class="fcard-btn" onclick="showDetail('Action for Autism')">View school</button>
+      </div>
+    </div>
+
+    <!-- Dev center 1 -->
+    <div class="fcard" data-type="center">
+      <span class="fcard-verified">✓ Verified</span>
+      <span class="fcard-type type-center">🧠 Dev. Centre</span>
+      <h4>Little Steps Child Development Centre</h4>
+      <p class="fcard-addr">📍 Boring Road, Patna, Bihar</p>
+      <div class="fcard-meta">
+        <span class="fmeta-pill">⏰ Mon–Sat 9–6</span>
+        <span class="fmeta-pill">🧩 OT · Speech · ABA</span>
+        <span class="fmeta-pill">🗣️ Hindi</span>
+      </div>
+      <div class="fcard-row">
+        <span class="fcard-dist">📌 0.9 km</span>
+        <span class="fcard-rating">★ 4.6</span>
+        <button class="fcard-btn" onclick="showDetail('Little Steps')">Get directions</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Map placeholder -->
+  <div class="finder-map" onclick="openMapPrompt()">
+    <div class="finder-map-icon">🗺️</div>
+    <p>Open interactive map</p>
+    <span>See all centers and schools pinned near your location</span>
+  </div>
+
+  <p class="finder-tip">Know a center that's missing? <a href="#book">Submit a listing →</a> &nbsp;|&nbsp; All listings are manually verified by our team.</p>
+</div>
+
+<script>
+function runSearch() {
+  const city = document.getElementById('finderCity').value.trim();
+  if (!city) return;
+  const cards = document.querySelectorAll('.fcard');
+  cards.forEach(c => {
+    const addr = c.querySelector('.fcard-addr').textContent.toLowerCase();
+    c.style.display = addr.includes(city.toLowerCase()) ? 'block' : 'none';
+  });
+  // if none match, show all
+  const visible = [...cards].filter(c => c.style.display !== 'none');
+  if (visible.length === 0) cards.forEach(c => c.style.display = 'block');
+}
+
+function switchTab(btn, type) {
+  document.querySelectorAll('.ftab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const cards = document.querySelectorAll('#finderGrid .fcard');
+  cards.forEach(c => {
+    c.style.display = (type === 'all' || c.dataset.type === type) ? 'block' : 'none';
+  });
+}
+
+function showDetail(name) {
+  alert('Directions for ' + name + ' will open in Google Maps.\n\n(Connect your Google Maps integration to enable live navigation.)');
+}
+
+function openMapPrompt() {
+  alert('Interactive map requires location permission.\n\nIn the full app, this opens a live Google Maps view with all verified centers pinned near you.');
+}
+</script>
+</section>
+
+<!-- ─── TESTIMONIALS ─── -->
+<section id="testimonials">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="eyebrow">Parent stories</p>
+      <h2 class="heading-2">Families who found their way with Autism Shakti</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-quote">"</div>
+        <p class="testi-text">My son was diagnosed with autism at 3. I had no idea where to start. Neha walked me through everything — what ABA means, what to expect from OT, even helped me prepare questions for the neurologist. Then she booked our first home session right there in the chat.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">SP</div>
+          <div>
+            <div class="testi-name">Sunita Pillai</div>
+            <div class="testi-role">Mother of Aadi, 4 · Bengaluru</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-quote">"</div>
+        <p class="testi-text">We live in a tier-2 city with no pediatric speech therapist nearby. Online consultations on Autism Shakti changed everything. The doctor reviewed Meera's videos, gave us a detailed plan, and a therapist was at our door the next week. The progress tracker keeps our family doctor in the loop.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">AK</div>
+          <div>
+            <div class="testi-name">Anand Kumar</div>
+            <div class="testi-role">Father of Meera, 6 · Mysuru</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-quote">"</div>
+        <p class="testi-text">As a therapist, the training modules were genuinely valuable — especially the parent communication module. And the AI session-prep tool saves me 30 minutes before every visit. I get to focus on the child, not paperwork. My bookings through Autism Shakti have tripled in 4 months.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">RN</div>
+          <div>
+            <div class="testi-name">Rashmi Nair</div>
+            <div class="testi-role">Occupational Therapist · Autism Shakti certified</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA ─── -->
+<section id="cta">
+  <h2 class="heading-2">Your child's progress starts today.</h2>
+  <p class="body-lg">It takes less than 2 minutes to talk to Neha, book your first consultation, and take the first real step toward clarity and care.</p>
+  <div class="cta-buttons">
+    <a href="#book" class="btn-white">
+      📅 Book a therapist
+    </a>
+    <a href="#chatbot" class="btn-outline-white">
+      💬 Talk to Neha first
+    </a>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <span style="display:inline-block;width:10px;height:10px;background:var(--amber);border-radius:50%"></span>
+        Autism Shakti
+      </div>
+      <p>India's first AI-powered home therapy platform for children with neurological and developmental disorders.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#">Home Therapy</a></li>
+        <li><a href="#">Online Consultation</a></li>
+        <li><a href="#">Shadow Teaching</a></li>
+        <li><a href="#">Progress Reports</a></li>
+        <li><a href="#">Parent Community</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>For Therapists</h5>
+      <ul>
+        <li><a href="#">Join Autism Shakti</a></li>
+        <li><a href="#">Training Modules</a></li>
+        <li><a href="#">Certification</a></li>
+        <li><a href="#">Therapist app</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Blog & resources</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Privacy policy</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Autism Shakti. All rights reserved.</p>
+    <p>Built with care for every family's journey.</p>
+  </div>
+</footer>
+
+<!-- Floating chat button -->
+<button class="chat-fab" onclick="document.getElementById('chatbot').scrollIntoView({behavior:'smooth'})" aria-label="Open AI guide">💬</button>
+
+<script>
+  /* ─── Booking interactions ─── */
+  function selectTherapist(el) {
+    document.querySelectorAll('.therapist-row').forEach(r => r.classList.remove('selected'));
+    el.classList.add('selected');
+  }
+  function selectSlot(btn) {
+    document.querySelectorAll('.slot-btn:not(.unavailable)').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+  }
+  function switchTab(btn, mode) {
+    document.querySelectorAll('.booking-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+  }
+  function confirmBooking() {
+    const selected = document.querySelector('.therapist-row.selected .tr-name');
+    const slot = document.querySelector('.slot-btn.selected');
+    const name = selected ? selected.textContent : 'your therapist';
+    const time = slot ? slot.textContent : 'your selected time';
+    const btn = document.querySelector('.confirm-btn');
+    btn.textContent = '✓ Booked! ' + name + ' at ' + time;
+    btn.style.background = '#22c55e';
+    setTimeout(() => { btn.textContent = 'Confirm booking →'; btn.style.background = ''; }, 3000);
+  }
+
+  /* ─── Chatbot interactions ─── */
+  const responses = {
+    'my child had a seizure': "I'm so sorry — that must have been frightening. First: if your child is still having the seizure or it lasted more than 5 minutes, please call emergency services immediately.\n\nIf the seizure has ended and your child is stable, here's what to do next: lay them on their side, time the duration, note any triggers, and let them rest. Can you tell me more about what happened? I'll log it for your next session.",
+    'what is aba therapy?': "ABA stands for Applied Behaviour Analysis. It's a therapy approach that uses positive reinforcement to teach new skills and reduce challenging behaviors — especially effective for autism.\n\nA therapist breaks a complex skill (like making eye contact or asking for help) into tiny, achievable steps, then rewards progress. Over time this builds communication, social skills, and independence. Would you like me to find ABA therapists near you?",
+    'speech delay signs': "Common speech delay signs to watch for: no babbling by 12 months, no words by 16 months, no 2-word phrases by 24 months, losing language they previously had, or being hard to understand compared to peers.\n\nDelays can have many causes — from hearing issues to neurological differences. The earlier we intervene, the better. Want to book a speech screening with one of our specialists?"
+  };
+
+  function sendQuickReply(btn) {
+    const text = btn.textContent;
+    addMessage('user', text);
+    btn.closest('.quick-replies').remove();
+    setTimeout(() => {
+      const key = text.toLowerCase();
+      const reply = responses[key] || "Thank you for sharing that. I'm here to help. Could you tell me a bit more so I can give you the most accurate guidance?";
+      addMessage('bot', reply);
+    }, 800);
+  }
+
+  function sendMsg() {
+    const input = document.getElementById('chatInput');
+    const text = input.value.trim();
+    if (!text) return;
+    addMessage('user', text);
+    input.value = '';
+    setTimeout(() => {
+      addMessage('bot', "Thank you for sharing that. I understand how worrying this can feel. Based on what you've described, I'd recommend speaking with one of our pediatric specialists. Would you like me to help you book a consultation, or do you have more questions I can answer first?");
+    }, 900);
+  }
+
+  function addMessage(role, text) {
+    const body = document.getElementById('chatBody');
+    const div = document.createElement('div');
+    div.className = 'msg ' + role;
+    const bubble = document.createElement('div');
+    bubble.className = 'msg-bubble';
+    bubble.textContent = text;
+    const time = document.createElement('div');
+    time.className = 'msg-time';
+    time.textContent = 'Just now';
+    div.appendChild(bubble);
+    div.appendChild(time);
+    body.appendChild(div);
+    body.scrollTop = body.scrollHeight;
+  }
+</script>
+</body>
+</html>
